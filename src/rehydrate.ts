@@ -3,7 +3,6 @@ import makeObjectFromPropKeys from "./makeObjectFromPropKeys"
 import { IPersistableStore, KeyOrKeys } from "./type"
 
 const rehydrate = (storage: any, stores: IPersistableStore[]) => {
-  console.log("trying to rehydrate")
   return new Promise((resolve) => {
     let callbacksNeeded = stores.length
     const tryResolve = () => {
@@ -13,9 +12,7 @@ const rehydrate = (storage: any, stores: IPersistableStore[]) => {
       }
     }
     for (const store of stores) {
-      console.log("trying to get")
       storage.getItem(`store.${store.name}`, (err: any, objString: any) => {
-        console.log("GOTRESULT", objString)
         const obj = JSON.parse(objString)
         for (const key of store.getPropKeys()) {
           const oldValue = get(obj, key)
