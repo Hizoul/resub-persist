@@ -1,0 +1,21 @@
+{
+  "extends": ["tslint:latest", "tslint-react"],
+  "rules": {
+    "semicolon": [true, "never"],
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "prefer-const": true,
+    "quotemark": [
+      true, "double", "jsx-double", "avoid-escape"
+    ],
+    "variable-name": [
+      true, "ban-keywords", "check-format", "allow-pascal-case"
+    ],
+    "ordered-imports": [
+      true
+    ],
+    "object-literal-key-quotes": [
+      true, "as-needed"
+    ],
+    "object-literal-sort-keys": false
+  }
+}

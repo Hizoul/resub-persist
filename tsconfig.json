@@ -1,0 +1,44 @@
+{
+
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es2015",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "allowJs": false,
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+        "*": ["*"]
+    },
+    "typeRoots": [
+      "src/@types",
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "./src/scripts/",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
+  "include": [
+    "./src/"
+  ],
+  "types": [
+    "typePatches"
+  ]
+}
