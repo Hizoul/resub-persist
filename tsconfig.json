@@ -32,6 +32,7 @@
     "webpack",
     "jest",
     "src/setupTests.ts",
+    "./src/testUtil/",
     "./src/scripts/",
     "**/*.test.ts",
     "**/*.test.tsx"

@@ -1,3 +1,6 @@
+/**
+ * resub Trigger keys
+ */
 export type KeyOrKeys = string | number | string[] | number[]
 
 /**
@@ -16,6 +19,7 @@ export interface IPersistableStore {
   name: string
   /**
    * All keys returned here will be automatically persisted / rehydrated
+   * They are fetched and set via lodash.get / lodash.set, so you can use their accessor syntax
    * They will also be snapshotted by the optional matchState testing utiltilty
    *
    * @memberof IPersistableStore
@@ -28,5 +32,13 @@ export interface IPersistableStore {
    * @type {KeyOrKeys}
    * @memberof IPersistableStore
    */
-  keyOrKeys?: KeyOrKeys
+  rehydratedKeys?: KeyOrKeys
+  /**
+   * If you use persistOnChange, resub-persist subscribes to these Keys
+   * This means on every trigger resub-perist will directly write the changes to storage
+   *
+   * @type {KeyOrKeys}
+   * @memberof IPersistableStore
+   */
+  watchedKeys?: KeyOrKeys
 }

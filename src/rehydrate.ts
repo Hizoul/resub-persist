@@ -2,9 +2,8 @@ import { get, isNil, set } from "lodash"
 import makeObjectFromPropKeys from "./makeObjectFromPropKeys"
 import { IPersistableStore, KeyOrKeys } from "./type"
 
-type StoreWithTrigger = IPersistableStore & { trigger: (limit?: KeyOrKeys) => void }
-
-const rehydrate = (storage: any, stores: StoreWithTrigger[]) => {
+const rehydrate = (storage: any, stores: IPersistableStore[]) => {
+  console.log("trying to rehydrate")
   return new Promise((resolve) => {
     let callbacksNeeded = stores.length
     const tryResolve = () => {
@@ -14,7 +13,9 @@ const rehydrate = (storage: any, stores: StoreWithTrigger[]) => {
       }
     }
     for (const store of stores) {
+      console.log("trying to get")
       storage.getItem(`store.${store.name}`, (err: any, objString: any) => {
+        console.log("GOTRESULT", objString)
         const obj = JSON.parse(objString)
         for (const key of store.getPropKeys()) {
           const oldValue = get(obj, key)
@@ -22,7 +23,8 @@ const rehydrate = (storage: any, stores: StoreWithTrigger[]) => {
             set(store, key, oldValue)
           }
         }
-        store.trigger()
+        const untypedStore: any = store
+        untypedStore.trigger(store.rehydratedKeys)
         tryResolve()
       })
     }

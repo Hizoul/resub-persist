@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`After Persistence Storage is contains changes 1`] = `
+Object {
+  "store.detailList": "{\\"myBool\\":true,\\"myString\\":\\"mychangedString\\"}",
+}
+`;
+
+exports[`Before Persistence Storage is Empty 1`] = `Object {}`;
