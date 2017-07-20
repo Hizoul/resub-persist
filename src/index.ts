@@ -1,3 +1,4 @@
-import persistProperty from "./persistProperty"
+import persist from "./persistProperty"
+import rehydrate from "./rehydrate"
 
-export { persistProperty }
+export { persist, rehydrate }
