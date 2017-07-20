@@ -1,6 +1,6 @@
 import * as get from "lodash.get"
-import * as set from "lodash.set"
 import * as isArray from "lodash.isarray"
+import * as set from "lodash.set"
 import makeObjectFromPropKeys from "./makeObjectFromPropKeys"
 import { IPersistableStore } from "./type"
 
