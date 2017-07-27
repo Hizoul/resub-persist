@@ -1,4 +1,3 @@
-import { get, isArray, isString, set } from "lodash"
 import { IPersistableStore } from "../type"
 import makeObjectFromPropKeys from "./getStoreState"
 

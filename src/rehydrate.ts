@@ -1,4 +1,5 @@
-import { get, isNil, set } from "lodash"
+import * as get from "lodash.get"
+import * as set from "lodash.set"
 import { IPersistableStore, KeyOrKeys } from "./type"
 
 const rehydrate = (storage: any, stores: IPersistableStore[]) => {
@@ -15,7 +16,7 @@ const rehydrate = (storage: any, stores: IPersistableStore[]) => {
         const obj = JSON.parse(objString)
         for (const key of store.getPropKeys()) {
           const oldValue = get(obj, key)
-          if (!isNil(oldValue)) {
+          if (oldValue !== undefined && oldValue !== null) {
             set(store, key, oldValue)
           }
         }
