@@ -16,7 +16,8 @@
     "typescript": "^2.4.2"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "./node_modules/.bin/jest --ci"
   },
   "jest": {
     "transform": {
