@@ -1,5 +1,4 @@
 import { get, isNil, set } from "lodash"
-import makeObjectFromPropKeys from "./makeObjectFromPropKeys"
 import { IPersistableStore, KeyOrKeys } from "./type"
 
 const rehydrate = (storage: any, stores: IPersistableStore[]) => {

@@ -1,8 +1,8 @@
 import * as get from "lodash.get"
 import * as isArray from "lodash.isarray"
 import * as set from "lodash.set"
-import makeObjectFromPropKeys from "./makeObjectFromPropKeys"
 import { IPersistableStore } from "./type"
+import getStoreState from "./util/getStoreState"
 
 const persist = (storage: any, stores: IPersistableStore[]) => {
   return new Promise((resolve) => {
@@ -14,7 +14,7 @@ const persist = (storage: any, stores: IPersistableStore[]) => {
       }
     }
     for (const store of stores) {
-      storage.setItem(`store.${store.name}`, JSON.stringify(makeObjectFromPropKeys(store)), callb)
+      storage.setItem(`store.${store.name}`, JSON.stringify(getStoreState(store)), callb)
     }
   })
 }
