@@ -10,9 +10,8 @@
     "@types/jest": "^20.0.4",
     "coveralls": "^2.13.1",
     "jest": "^20.0.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "resub": "^0.0.18",
+    "preact": "^8.2.1",
+    "preact-compat": "^3.16.0",
     "ts-jest": "^20.0.7",
     "typescript": "^2.4.2"
   },
@@ -30,9 +29,15 @@
       "tsx",
       "js"
     ],
+    "moduleNameMapper": {
+      "preact(.*)": "preact$1",
+      "react(.*)": "preact-compat$1",
+      "react-dom(.*)": "preact-compat$1"
+    },
     "mapCoverage": true
   },
   "dependencies": {
+    "resub": "^0.0.18",
     "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2"
   }
