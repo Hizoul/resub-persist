@@ -1,4 +1,4 @@
-# resub-persist
+# resub-persist [![Build Status](https://travis-ci.org/Hizoul/resub-persist.svg?branch=master)](https://travis-ci.org/Hizoul/resub-persist)
 
 Dead simple peristence for Resub-Stores.
 
