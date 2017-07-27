@@ -16,7 +16,7 @@
     "typescript": "^2.4.2"
   },
   "scripts": {
-    "prepublish": "rm -rf dist && tsc",
+    "prepublishOnly": "rm -rf dist && tsc",
     "build": "tsc",
     "test": "./node_modules/.bin/jest --ci --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
