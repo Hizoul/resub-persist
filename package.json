@@ -1,8 +1,9 @@
 {
   "name": "resub-persist",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Persist and Rehydrate your Resub-Stores!",
   "main": "dist",
+  "typings": "dist",
   "repository": "https://github.com/Hizoul/resub-persist.git",
   "author": "MMB2 <git@mmb2.click>",
   "license": "Apache-2.0",
