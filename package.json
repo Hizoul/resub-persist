@@ -1,6 +1,6 @@
 {
   "name": "resub-persist",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Persist and Rehydrate your Resub-Stores!",
   "main": "dist",
   "typings": "dist",
@@ -11,6 +11,7 @@
     "@types/jest": "^20.0.7",
     "coveralls": "^2.13.1",
     "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
     "ts-jest": "^20.0.10",
@@ -39,7 +40,6 @@
     "mapCoverage": true
   },
   "dependencies": {
-    "jest-cli": "^20.0.4",
     "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2",
     "resub": "^0.0.19"
