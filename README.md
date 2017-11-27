@@ -26,6 +26,7 @@ You only need to a localstorage Compatible API (web = `localStorage`/`localforag
 They both return a promise to tell you when they are done.
 
 ```ts
+  import { persist, rehydrate } from "resub-persist"
   const TestStore1 = new TestStore()
   const TestStore2 = new TestStore()
   const persistAndRehydrate = async () => {
@@ -34,7 +35,25 @@ They both return a promise to tell you when they are done.
   }
   persistAndRehydrate()
 ```
+## Auto-Save on Changes
+
+By using the `autoSave` function you can let the persist function get called automatically!
+Thanks to it using resub's classic subscription function under the hood you can, if needed, specify for which keys the autosave should be executed.
+The function returns the subscription-id with which you can manually unsubscribe from the store itself.
+
+```ts
+  import { autoSave } from "resub-persist"
+  const TestStore1 = new TestStore()
+  const subId = autoSave(memForage, TestStore1, "mySubscriptionKey")
+  // autosave enabled
+  TestStore1.unsubscribe(subId)
+  // autosave disabled again
+```
 
 ## Motivation
 
 I was missing an equivalent of `redux-persist` for `resub` so this is something that accomplishes the most basic part of `redux-persist`. Saving parts of a store to a localStorage-compatible API and rehydrating from there to Store.
+
+# Changelog
+## 1.2.0
+- Added the autoSave function

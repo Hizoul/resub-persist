@@ -1,6 +1,6 @@
 {
   "name": "resub-persist",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "description": "Persist and Rehydrate your Resub-Stores!",
   "main": "dist",
   "typings": "dist",
@@ -18,8 +18,8 @@
     "typescript": "^2.6.1"
   },
   "scripts": {
-    "prepublishOnly": "rm -rf dist && tsc",
-    "build": "tsc",
+    "prepublishOnly": "rm -rf dist && ./node_modules/.bin/tsc",
+    "build": "./node_modules/.bin/tsc",
     "test": "./node_modules/.bin/jest --ci --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "jest": {
