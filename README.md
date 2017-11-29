@@ -4,16 +4,18 @@ Dead simple peristence for Resub-Stores.
 
 ## Getting Started
 
-In order to make your store persistable simply implement the `IPersistableStore` interface.
-This means define a `name` and `getPropKeys` in your ResubStore and you're good to go!
+In order to make your store persistable simply implement the `IPersistableStore` -Interface.
+This means define a `name` and `getPropKeys` in your resub-store and you're good to go!
 
 ```ts
+import { AutoSubscribeStore, autoSubscribeWithKey, StoreBase } from "resub"
+import { IPersistableStore } from "resub-persist"
+
 @AutoSubscribeStore
 class TestStore extends StoreBase implements IPersistableStore {
-  public name = "detailList"
+  public name = "myTestStore"
   private myBool: boolean
   private myString: string
-  ...
   public getPropKeys() { return ["myBool", "myString"] }
   ...
 }
@@ -21,8 +23,8 @@ class TestStore extends StoreBase implements IPersistableStore {
 
 ## Persist and Rehydrate
 
-Persistence and Rehydration are simple one line calls thanks to the `IPersistableStore` Interface!
-You only need to a localstorage Compatible API (web = `localStorage`/`localforage`, rn = `AsyncStorage`) as first argument.
+Persistence and rehydration are simple one line calls thanks to the `IPersistableStore`-Interface!
+You only need a localstorage compatible API (e.g. web = `localforage`, rn = `AsyncStorage`) as first argument.
 They both return a promise to tell you when they are done.
 
 ```ts
@@ -39,7 +41,7 @@ They both return a promise to tell you when they are done.
 
 By using the `autoSave` function you can let the persist function get called automatically!
 Thanks to it using resub's classic subscription function under the hood you can, if needed, specify for which keys the autosave should be executed.
-The function returns the subscription-id with which you can manually unsubscribe from the store itself.
+The function returns the subscription-id with which you can manually unsubscribe from the store itself, and hence stop the autoSaving.
 
 ```ts
   import { autoSave } from "resub-persist"
@@ -52,7 +54,7 @@ The function returns the subscription-id with which you can manually unsubscribe
 
 ## Motivation
 
-I was missing an equivalent of `redux-persist` for `resub` so this is something that accomplishes the most basic part of `redux-persist`. Saving parts of a store to a localStorage-compatible API and rehydrating from there to Store.
+I was missing an equivalent of `redux-persist` for `resub` so this is something that accomplishes the most basic part of `redux-persist`. Saving parts of a store to a localStorage-compatible API and rehydrating from there to store.
 
 # Changelog
 ## 1.2.1
