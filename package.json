@@ -1,6 +1,6 @@
 {
   "name": "resub-persist",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Persist and Rehydrate your Resub-Stores!",
   "main": "dist",
   "typings": "dist",
@@ -12,10 +12,10 @@
     "coveralls": "^3.0.0",
     "jest": "^21.2.1",
     "jest-cli": "^21.2.1",
-    "preact": "^8.2.6",
+    "preact": "^8.2.7",
     "preact-compat": "^3.17.0",
-    "ts-jest": "^21.2.3",
-    "typescript": "^2.6.1"
+    "ts-jest": "^21.2.4",
+    "typescript": "^2.6.2"
   },
   "scripts": {
     "prepublishOnly": "rm -rf dist && ./node_modules/.bin/tsc",
@@ -41,6 +41,6 @@
   "dependencies": {
     "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2",
-    "resub": "^0.0.21"
+    "resub": "^0.1.0"
   }
 }

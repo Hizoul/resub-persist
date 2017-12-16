@@ -57,6 +57,9 @@ The function returns the subscription-id with which you can manually unsubscribe
 I was missing an equivalent of `redux-persist` for `resub` so this is something that accomplishes the most basic part of `redux-persist`. Saving parts of a store to a localStorage-compatible API and rehydrating from there to store.
 
 # Changelog
+## 1.2.2
+- Upgrade resub to 0.1.0 and also other dev dependencies
+
 ## 1.2.1
 - Fix lowercase typo in filename import
 ## 1.2.0
