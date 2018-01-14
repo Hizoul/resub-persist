@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`automatic persistence worked 1`] = `
+exports[`Cover Persist Proeprty Test: automatic persistence worked 1`] = `
 Object {
   "store.detailList": "{\\"myBool\\":false,\\"myString\\":\\"i was autosaved\\"}",
 }
 `;
 
-exports[`boolean can become true 1`] = `
+exports[`Cover Persist Proeprty Test: boolean can become true 1`] = `
 Object {
   "store.detailList": "{\\"myBool\\":true,\\"myString\\":\\"autochangesaved again\\"}",
 }
 `;
 
-exports[`disabling automatic saving results in no changes made 1`] = `
+exports[`Cover Persist Proeprty Test: disabling automatic saving results in no changes made 1`] = `
 Object {
   "store.detailList": "{\\"myBool\\":false,\\"myString\\":\\"i was autosaved\\"}",
 }
 `;
 
-exports[`empty before any actions 1`] = `Object {}`;
+exports[`Cover Persist Proeprty Test: empty before any actions 1`] = `Object {}`;
 
-exports[`nothing automatically persisted 1`] = `Object {}`;
+exports[`Cover Persist Proeprty Test: nothing automatically persisted 1`] = `Object {}`;
 
-exports[`resubbing autosaves again 1`] = `
+exports[`Cover Persist Proeprty Test: resubbing autosaves again 1`] = `
 Object {
   "store.detailList": "{\\"myBool\\":false,\\"myString\\":\\"autochangesaved again\\"}",
 }

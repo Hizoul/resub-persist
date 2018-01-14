@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`After Changes 1`] = `
+exports[`Cover Persist Proeprty Test: After Changes 1`] = `
 Object {
   "myBool": true,
   "myString": "asdf",
 }
 `;
 
-exports[`Initial State 1`] = `
+exports[`Cover Persist Proeprty Test: Initial State 1`] = `
 Object {
   "myBool": false,
   "myString": "",
