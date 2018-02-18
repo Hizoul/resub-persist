@@ -1,5 +1,5 @@
-## 1.2.3
-- Upgrade dependencies (resub at 1.0.5 now)
+## 1.2.3, 1.2.4
+- Upgrade dependencies
 
 ## 1.2.2
 - Upgrade resub to 0.1.0 and also other dev dependencies
