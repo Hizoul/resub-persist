@@ -1,5 +1,7 @@
 # resub-persist [![Build Status](https://travis-ci.org/Hizoul/resub-persist.svg?branch=master)](https://travis-ci.org/Hizoul/resub-persist) [![Coverage Status](https://coveralls.io/repos/github/Hizoul/resub-persist/badge.svg?branch=master)](https://coveralls.io/github/Hizoul/resub-persist?branch=master) [![dependencies](https://david-dm.org/Hizoul/resub-persist.png)](https://david-dm.org/Hizoul/resub-persist) [![npm](https://img.shields.io/npm/v/resub-persist.svg)](https://www.npmjs.com/package/resub-persist)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Hizoul/resub-persist.svg)](https://greenkeeper.io/)
+
 Dead simple peristence for Resub-Stores.
 
 ## Getting Started
