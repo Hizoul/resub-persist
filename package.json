@@ -1,6 +1,6 @@
 {
   "name": "resub-persist",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Persist and Rehydrate your Resub-Stores!",
   "main": "dist",
   "typings": "dist",

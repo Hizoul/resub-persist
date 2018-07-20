@@ -8,6 +8,7 @@ Dead simple peristence for Resub-Stores.
 
 In order to make your store persistable simply implement the `IPersistableStore` -Interface.
 This means define a `name` and `getPropKeys` in your resub-store and you're good to go!
+`getPropKeys` defines which variables of your store should be persisted.
 
 ```ts
 import { AutoSubscribeStore, autoSubscribeWithKey, StoreBase } from "resub"
@@ -45,17 +46,17 @@ They both return a promise to tell you when they are done.
 
 By using the `autoSave` function you can let the `persist` function get called automatically!
 Thanks to it using resub's classic subscription function under the hood you can, if needed, specify for which keys the automatic save should be executed.
-The function returns the subscription-id with which you can manually unsubscribe from the store itself, and hence stop the autoSaving.
+The function returns the subscription-id with which you can manually unsubscribe from the store itself, and hence stop the automatic saving.
 
 ```ts
   import { autoSave } from "resub-persist"
   import * as localforage from "localforage"
 
   const TestStore1 = new TestStore()
+  // enable autosave
   const subId = autoSave(localforage, TestStore1, "mySubscriptionKey")
-  // autosave enabled
+  // disable autosave
   TestStore1.unsubscribe(subId)
-  // autosave disabled again
 ```
 
 ## Motivation
@@ -63,6 +64,8 @@ The function returns the subscription-id with which you can manually unsubscribe
 I was missing an equivalent of `redux-persist` for `resub` so this is something that accomplishes the most basic part of `redux-persist`. Saving parts of a store to an asynchronous localStorage-compatible API and rehydrating from there to store.
 
 # Changelog
+## 1.2.6
+- Improve code / typescript documentation
 ## 1.2.4 & 1.2.5
 - Update dependencies
 ## 1.2.3
