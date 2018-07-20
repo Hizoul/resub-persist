@@ -3,6 +3,13 @@ import * as set from "lodash.set"
 import { IPersistableStore } from "./type"
 import getStoreState from "./util/getStoreState"
 
+/**
+ * Save the state of `stores` into `storage`. 
+ * Sets the variables in the stores. 
+ * When done will trigger using `rehydratedKeys`. 
+ * @param storage pass localforage or AsyncStorage here
+ * @param stores pass your IPersistableStores
+ */
 const persist = (storage: any, stores: IPersistableStore[]) => {
   return new Promise((resolve) => {
     let neededCallbacks = Array.isArray(stores) ? stores.length : 0

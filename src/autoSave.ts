@@ -1,8 +1,5 @@
-import * as get from "lodash.get"
-import * as set from "lodash.set"
 import persist from "./persist"
 import { IPersistableStore, KeyOrKeys } from "./type"
-import getStoreState from "./util/getStoreState"
 
 const alreadySaving: {[index: string]: boolean | undefined} = {}
 
@@ -25,6 +22,13 @@ const tryToSaveStore = (storage: any, store: IPersistableStore)  => {
   return doSave
 }
 
+/**
+ * Subscribe to `store` with the optional `key` param. 
+ * Calls `persist` for the store after every `resub` trigger relevant to `key`.
+ * @param storage pass localforage or AsyncStorage here
+ * @param store pass your IPersistableStore that should be persisted on change
+ * @param key define to which `resub`-keys the autosave should react
+ */
 const autoSave = (storage: any, store: IPersistableStore, key?: KeyOrKeys) => {
   const s: any = store
   return s.subscribe(tryToSaveStore(storage, store), key)

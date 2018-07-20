@@ -3,9 +3,9 @@ import * as set from "lodash.set"
 import { IPersistableStore } from "../type"
 
 /**
- * Get a Snapshot of the current Store State.
+ * Get a snapshot of the current store state.
  * Useful for testing with jest expect.toMatchSnapshot
- *
+ * If `paths` is omitted will use `store.getPropKeys`
  * @param store Store to create State-Snapshot from
  * @param paths (Optional) Only copy these strings (uses lodash.get/set)
  */
