@@ -31,24 +31,28 @@ They both return a promise to tell you when they are done.
 
 ```ts
   import { persist, rehydrate } from "resub-persist"
+  import * as localforage from "localforage"
+
   const TestStore1 = new TestStore()
   const TestStore2 = new TestStore()
   const persistAndRehydrate = async () => {
-    await persist(memForage, [TestStore1])
-    await rehydrate(memforage, [TestStore2]) // TestStore2 now has persisted state of TestStore1
+    await persist(localforage, [TestStore1])
+    await rehydrate(localforage, [TestStore2]) // TestStore2 now has persisted state of TestStore1
   }
   persistAndRehydrate()
 ```
 ## Auto-Save on Changes
 
-By using the `autoSave` function you can let the persist function get called automatically!
-Thanks to it using resub's classic subscription function under the hood you can, if needed, specify for which keys the autosave should be executed.
+By using the `autoSave` function you can let the `persist` function get called automatically!
+Thanks to it using resub's classic subscription function under the hood you can, if needed, specify for which keys the automatic save should be executed.
 The function returns the subscription-id with which you can manually unsubscribe from the store itself, and hence stop the autoSaving.
 
 ```ts
   import { autoSave } from "resub-persist"
+  import * as localforage from "localforage"
+
   const TestStore1 = new TestStore()
-  const subId = autoSave(memForage, TestStore1, "mySubscriptionKey")
+  const subId = autoSave(localforage, TestStore1, "mySubscriptionKey")
   // autosave enabled
   TestStore1.unsubscribe(subId)
   // autosave disabled again
@@ -56,7 +60,7 @@ The function returns the subscription-id with which you can manually unsubscribe
 
 ## Motivation
 
-I was missing an equivalent of `redux-persist` for `resub` so this is something that accomplishes the most basic part of `redux-persist`. Saving parts of a store to a localStorage-compatible API and rehydrating from there to store.
+I was missing an equivalent of `redux-persist` for `resub` so this is something that accomplishes the most basic part of `redux-persist`. Saving parts of a store to an asynchronous localStorage-compatible API and rehydrating from there to store.
 
 # Changelog
 ## 1.2.4 & 1.2.5
