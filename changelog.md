@@ -1,3 +1,6 @@
+## 1.2.7
+- Upgrade dependencies
+
 ## 1.2.6
 - Improve documentation in README and typescript comments for `persist`, `rehydrate` and `autoSave`
 ## 1.2.3, 1.2.4
