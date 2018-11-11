@@ -1,6 +1,6 @@
 {
   "name": "resub-persist",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Persist and Rehydrate your Resub-Stores!",
   "main": "dist",
   "typings": "dist",
@@ -8,14 +8,15 @@
   "author": "MMB2 <git@mmb2.click>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/jest": "^23.3.2",
+    "@types/jest": "^23.3.9",
     "coveralls": "^3.0.2",
-    "jest": "^23.5.0",
-    "jest-cli": "^23.5.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
     "preact": "^8.3.1",
     "preact-compat": "^3.18.4",
-    "ts-jest": "^23.1.4",
-    "typescript": "^3.0.3"
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.6",
+    "resub": "^1.0.13"
   },
   "scripts": {
     "prepublishOnly": "rm -rf dist && ./node_modules/.bin/tsc",
@@ -24,7 +25,7 @@
   },
   "jest": {
     "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      ".(ts|tsx)": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
@@ -39,7 +40,9 @@
   },
   "dependencies": {
     "lodash.get": "^4.4.2",
-    "lodash.set": "^4.3.2",
-    "resub": "^1.0.8"
+    "lodash.set": "^4.3.2"
+  },
+  "peerDependencies": {
+    "resub": "1.x.x"
   }
 }

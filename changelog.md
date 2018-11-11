@@ -1,3 +1,7 @@
+## 1.2.8
+- upgrade dependencies
+- move resub to peerDependencies
+
 ## 1.2.7
 - Upgrade dependencies
 
