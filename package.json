@@ -16,7 +16,7 @@
     "preact-compat": "^3.18.4",
     "ts-jest": "^24.0.0",
     "typescript": "^3.1.6",
-    "resub": "^1.0.13"
+    "resub": "^2.3.0"
   },
   "scripts": {
     "prepublishOnly": "rm -rf dist && ./node_modules/.bin/tsc",
